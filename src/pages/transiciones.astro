@@ -1,0 +1,117 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+
+
+---
+<Layout>
+    <Header/>
+    <section>
+        <div class="titulo">
+            <h1>Transiciones con botones <div class="linea"></div></h1>
+        </div>
+        <div class="botones">
+            <div class="cuadro"><button class="boton boton1">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton2">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton3">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton4">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton5">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton6">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton7">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton8">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton9">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton10">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton11">Ejemplo</button></div>
+            <div class="cuadro"><button class="boton boton12">Ejemplo</button></div>
+        </div>
+    </section>
+    <Footer/>
+</Layout>
+
+<style lang="scss">
+    .boton1:hover {
+        transform: scale(1.2);
+    }
+    .boton2:hover {
+        transform: scale(0.8);
+    }
+    .boton3:hover {
+        transform: translateY(-6px);
+    }
+    .boton4:hover {
+        transform: translateY(6px);
+    }
+    .boton5:hover {
+        background-color: black;
+        color: white;
+    }
+    .boton6:hover {
+        border-radius: 30px;
+    }
+    .boton7:hover {
+        letter-spacing: 3px;
+    }
+    .boton8:hover {
+        box-shadow: 0px 0px 10px black;
+    }
+    .boton9:hover {
+        
+    }
+    .boton10:hover {
+        
+    }
+    .boton11:hover {
+        
+    }
+    .boton12:hover {
+        
+    }
+
+
+
+    .boton {
+        padding: 10px;
+        border: 0;
+        border-radius: 10px;
+        font-size: 1.1em;
+        font-weight:700;
+        transition: all ease .55s;
+        cursor: pointer;
+    }
+    .cuadro {
+        width: 150px;
+        height: 150px;
+        margin: 50px;
+        display: flex;
+        background-color: #6b9bd25d;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.588);
+    }
+    .botones {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .linea {
+            height: 5px;
+            width: 100%;
+            background-color: #6B9BD2;
+        }
+    .titulo {
+        height: 15%;
+        width: 80%;
+        color: #575880;
+        font-size: 40px;
+    }
+    section {
+        height: 82vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>

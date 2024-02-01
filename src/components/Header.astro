@@ -1,0 +1,206 @@
+---
+
+---
+
+<header>
+    <a class="logo" href="/"><span class="CSStxt">CSS</span><div class="repo"><span class="REtxt">RE</span><span>PO</span></div></a>
+    <div class="navbar">
+        <div onclick="scrollToContent('aboutUsId')" class="about">About</div>
+        <div class="anim"><a href="/animaciones">Animaciones</a></div>
+        <div class="tran"><a href="/transiciones">Transiciones</a></div>
+    </div>
+    <div class="navbarMovil">
+        <button class="menuMovil"><img onclick="" src="menu.svg" alt=""></button>
+    </div>
+    <div class="menuOculto">
+        <div class="listaMenu">
+            <div>
+                <img class="cerrar" src="cross.svg" alt="">
+            </div>
+            <h1>About</h1>
+            <h1>Animaciones</h1>
+            <h1>Transiciones</h1>
+        </div>
+    </div>
+</header>
+
+<style lang="scss">
+    a {
+        text-decoration: none;
+        color:#575880;
+    }
+    header {
+        height: 10vh;
+        width: 100%;
+        background-color: #F1F5F9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+    .logo {
+        color:#575880;
+        font-size: 40px;
+        font-weight:900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        cursor: pointer;
+        }
+    .CSStxt {
+        transition: all ease .55s;
+    }
+    .logo:hover .CSStxt{
+        letter-spacing: 5px;
+    }
+    .REtxt {
+        letter-spacing: 1px;
+    }
+    .repo {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height:19px;
+        background-color: #6B9BD2;
+        width: auto;
+        border-radius: 5px;
+        padding: 4px;
+        color: #F1F5F9;
+        margin-left: 5px;
+    }
+    .navbar {
+        color:#575880;
+        font-size: 1.3em;
+        font-weight:900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+    }
+    button {
+        border: 0;
+        background: transparent;
+    }
+    button:focus { 
+        outline: none; 
+    }
+    .about {
+            margin-right: 20px;
+            border-radius: 10px;
+            transition: all ease .55s;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .about:hover {
+            background-color: #575880;
+            color: #F1F5F9;
+        }
+        .anim {
+            margin-right: 20px;
+            animation-duration: 0.8s;
+            animation-iteration-count: infinite;
+            cursor: pointer;
+        }
+        .anim:hover {
+            animation-name: animacion;
+            animation-timing-function: ease
+        }
+        @keyframes animacion {
+           0% {
+            transform: translateX(0px);
+            }
+            30% {
+                transform: translateX(-7px);
+            }
+            60% {
+                transform: translateX(7px);
+            }
+            80% {
+                transform: translateX(-3px);
+            }
+            90% {
+                transform: translateX(3px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
+        }
+        .tran {
+            border-radius: 10px;
+            transition: all ease .55s;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .tran:hover {
+            rotate: 6deg;
+        }
+    .navbarMovil {
+            display: none;
+        }
+
+
+
+        @media only screen and (max-width: 426px) {
+                .navbar {
+                    display: none;
+                }
+                .navbarMovil {
+                    display: block;
+                    transform: scale(0.5);
+                }
+            }
+
+
+            .menuOculto {
+                position: fixed;
+                height: 100vh;
+                width: 100%;
+                background-color: #F1F5F9;
+                z-index: 1001;
+                top: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+            
+            }
+            .listaMenu {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: column;
+                height: 70%;
+                color: #575880;
+                font-size: 25px;
+            }
+            .listaMenu h1{ 
+                cursor: pointer;
+            }
+            .cerrar {
+                transform: scale(0.6);
+            }
+</style>
+
+<script lang="js">
+    function scrollToContent(id) {
+        window.location.href = '/#aboutUsId';
+    }
+    var menu = document.querySelector(".menuMovil");
+    var menuOculto = document.querySelector(".menuOculto");
+    var cerrar = document.querySelector(".cerrar");
+    var cubo = document.querySelector(".caja");
+
+    menu.addEventListener("click", function() {
+        menuOculto.style.display = "block";
+        cubo.style.display = "none";
+    });
+
+    cerrar.addEventListener("click", function() {
+        menuOculto.style.display = "none";
+        cubo.style.display = "flex";
+    });
+
+
+</script>

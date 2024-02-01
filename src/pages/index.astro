@@ -1,0 +1,789 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<Header />
+	<section>
+
+        <div class="intro">
+            <div class="derecha">
+
+                <h1 class="desc">Librería de animaciones <div class="linea"></div> transiciones CSS</h1>
+
+            </div>
+
+            <div class="izquierda">
+
+                <div class="fondo">
+                    <div class="caja">
+                        <div class="left cara"></div>
+                        <div class="right cara"></div>
+                        <div class="front cara"></div>
+                        <div class="back cara"></div>
+                        <div class="top cara"></div>
+                        <div class="bottom cara"></div>
+                        <div class="caraCubo">
+                            <div class="caja2" onclick="secreto()">
+                                <div class="left2 cara2"><span class="inter">?</span></div>
+                                <div class="right2 cara2"><span class="inter">?</span></div>
+                                <div class="front2 cara2"><span class="inter">?</span></div>
+                                <div class="back2 cara2"><span class="inter">?</span></div>
+                                <div class="top2 cara2"><span class="inter">?</span></div>
+                                <div class="bottom2 cara2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aboutUs">
+            <span id="aboutUsId" class="aboutTitle">Que es <span class="csstxt">CSS </span><span class="repotxt">REPO</span> ?<div class="linea2"></div></span>
+            <div class="aboutContenido">
+                <span class="parrafo">En CSS Repo, nos apasiona ofrecer soluciones creativas y eficientes para el diseño web. Como una biblioteca en línea especializada en animaciones y transiciones con CSS, nos dedicamos a proporcionar a los desarrolladores y diseñadores web las herramientas necesarias para llevar sus proyectos al siguiente nivel.</span>
+                <div class="caja3">
+                    <div class="left3 cara3"></div>
+                    <div class="right3 cara3"></div>
+                    <div class="front3 cara3"></div>
+                    <div class="back3 cara3"></div>
+                    <div class="top3 cara3"></div>
+                    <div class="bottom3 cara3"></div>
+                </div>
+                <span class="parrafo">Nuestro extenso catálogo ofrece una amplia gama de efectos visuales que van desde sutiles transiciones hasta impresionantes animaciones, todo ello diseñado para mejorar la experiencia del usuario y agregar un toque de dinamismo a cualquier sitio web. Con CSS Repo, la potencia de CSS se convierte en tu aliado para crear experiencias web impactantes y memorables.</span>
+            </div>
+            
+        </div>
+        
+        
+    </section>
+	<Footer />
+</Layout>
+
+<style>
+        section {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column;
+        }
+        .intro {
+            width: 100%;
+            height: 90vh;
+            display: flex;
+        }
+        .derecha {
+            height: 90vh;
+            width: 50%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            color: #575880;
+            font-size: 50px;
+            text-align: start;
+        }
+        .desc {
+            width:min-content;
+        }
+        .linea {
+            height: 5px;
+            width: 100%;
+            background-color: #6B9BD2;
+        }
+        .izquierda {
+            height: 90vh;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        @keyframes anim {
+            to {
+                transform: rotateX(-20deg) rotateY(360deg);
+            }
+        }
+        .caja {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            transform: rotateX(-20deg);
+            animation: anim 15s linear infinite;
+            
+        }
+        .caja2 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            transform: rotateX(-20deg);
+            animation: anim 15s linear infinite;
+            
+        }
+        .inter {
+            font-size: 50px;
+        }
+        .caja:hover .front{
+            width: 6em;
+            height: 6em;
+            transform: translateZ(6em);
+            border-radius: 50%;
+        }
+        .caja:hover .back{
+            width: 6em;
+            height: 6em;
+            transform: translateZ(-6em);
+            border-radius: 50%;
+        }
+        .caja:hover .left{
+            width: 6em;
+            height: 6em;
+            transform: translateX(-6em) rotateY(90deg);
+            border-radius: 50%;
+        }
+        .caja:hover .right{
+            width: 6em;
+            height: 6em;
+            transform: translateX(6em) rotateY(90deg);
+            border-radius: 50%;
+        }
+        .caja:hover .top{
+            width: 6em;
+            height: 6em;
+            transform: translateY(-6em) rotateX(90deg);
+            border-radius: 50%;
+        }
+        .caja:hover .bottom{
+            width: 6em;
+            height: 6em;
+            transform: translateY(6em) rotateX(90deg);
+            border-radius: 50%;
+        }
+        
+        .cara {
+            position: absolute;
+            width: 8em;
+            height: 8em;
+            background-color: #ca9864;
+            overflow: hidden;
+            transition: all ease .55s;
+            border: 1px solid #585882;
+        }
+        .cara2 {
+            position: absolute;
+            width: 4em;
+            height: 4em;
+            background-color: #ca9864;
+            overflow: hidden;
+            transition: all ease .55s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #FFE109;
+        }
+        .caraCubo {
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .front {
+            transform: translateZ(4em);
+            background-color: #585882;
+        }
+        .back {
+            transform: translateZ(-4em);
+            background-color: #585882;
+        }
+        .left {
+            transform: translateX(-4em) rotateY(90deg);
+            background-color: #666697;
+        }
+        .right {
+            transform: translateX(4em) rotateY(90deg);
+            background-color: #666697;
+        }
+        .top {
+            transform: translateY(-4em) rotateX(90deg);
+            background-color: #666697;
+        }
+        .bottom {
+            transform: translateY(4em) rotateX(90deg);
+            background-color: #666697;
+        }
+
+
+        .front2 {
+            transform: translateZ(2em);
+            background-color: #FFE109;
+        }
+        .back2 {
+            transform: translateZ(-2em);
+            background-color: #FFE109;
+        }
+        .left2 {
+            transform: translateX(-2em) rotateY(90deg);
+            background-color: #E1B309;
+        }
+        .right2 {
+            transform: translateX(2em) rotateY(90deg);
+            background-color: #E1B309;
+        }
+        .top2 {
+            transform: translateY(-2em) rotateX(90deg);
+            background-color: #FFE109;
+        }
+        .bottom2 {
+            transform: translateY(2em) rotateX(90deg);
+            background-color: #FFE109;
+        }
+
+
+        .navbar {
+            color:#575880;
+            font-size: 1.3em;
+            font-weight:900;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 30px;
+        }
+        .about {
+            margin-right: 20px;
+            border-radius: 10px;
+            transition: all ease .55s;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .about:hover {
+            background-color: #575880;
+            color: #F1F5F9;
+        }
+        .anim {
+            margin-right: 20px;
+            border-radius: 10px;
+            padding: 10px;
+            animation-duration: 0.8s;
+            animation-iteration-count: infinite;
+            cursor: pointer;
+        }
+        .anim:hover {
+            animation-name: animacion;
+            animation-timing-function: ease
+        }
+        @keyframes animacion {
+           0% {
+            transform: translateX(0px);
+            }
+            30% {
+                transform: translateX(-7px);
+            }
+            60% {
+                transform: translateX(7px);
+            }
+            80% {
+                transform: translateX(-3px);
+            }
+            90% {
+                transform: translateX(3px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
+        }
+        .tran {
+            border-radius: 10px;
+            padding: 10px;
+            transition: all ease .55s;
+            cursor: pointer;
+        }
+        .tran:hover {
+            rotate: 6deg;
+        }
+        .fondo {
+            width: 50%;
+            height: 50%;
+            background-color: #6B9BD2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.507);
+
+        }
+                    /* Estilo del scrollbar */
+            /* Anchura del scrollbar */
+            ::-webkit-scrollbar {
+                width: 12px;
+            }
+
+            /* Track del scrollbar (la parte en la que no se desplaza el contenido) */
+            ::-webkit-scrollbar-track {
+                background: #FFFFFF;
+            }
+
+            /* Thumb del scrollbar (el control deslizante) */
+            ::-webkit-scrollbar-thumb {
+                background: #575880;
+            }
+
+            /* Cambiar el color cuando se pasa el ratón sobre el thumb */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #3e3f5c;
+            }
+            .aboutUs{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .aboutTitle {
+                color: #6B9BD2;
+                font-size: 3em;
+                text-align: center;
+                font-weight:600;
+            }
+            .linea2 {
+                height: 5px;
+                width: 100%;
+                background-color: #6B9BD2;
+            }
+            .csstxt {
+                color: #575880;
+            }
+            .repotxt {
+                color: #6B9BD2;
+            }
+            .aboutContenido {
+                margin-top: 50px;
+                display: flex;
+                justify-content: space-evenly;
+                margin-bottom: 100px;
+
+            }
+            .parrafo {
+                width: 30%;
+                font-size: 1.5em;
+                font-weight: 600;
+                color: #575880;
+                background-color: #F1F5F9;
+                padding: 20px;
+            }
+            .footer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                font-size: 1.2em;
+                color: #6B9BD2;
+            }
+            
+
+            .cara3 {
+                position: absolute;
+                width: 8em;
+                height: 8em;
+                background-color: #ca9864;
+                overflow: hidden;
+                transition: all ease .55s;
+                border: 1px solid #585882;
+            }
+            .caja3 {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform-style: preserve-3d;
+                transform: rotateX(-20deg);
+                animation: anim 15s linear infinite;
+                
+            }
+            .front3 {
+                transform: translateZ(4em);
+                background-color: #585882;
+                animation: pruebaFront 6s ease infinite;
+            }
+            .back3 {
+                transform: translateZ(-4em);
+                background-color: #585882;
+                animation: pruebaBack 6s ease infinite;
+            }
+            .left3 {
+                transform: translateX(-4em) rotateY(90deg);
+                background-color: #666697;
+                animation: pruebaLeft 6s ease infinite;
+            }
+            .right3 {
+                transform: translateX(4em) rotateY(90deg);
+                background-color: #666697;
+                animation: pruebaRight 6s ease infinite;
+            }
+            .top3 {
+                transform: translateY(-4em) rotateX(90deg);
+                background-color: #666697;
+                animation: pruebaTop 6s ease infinite;
+            }
+            .bottom3 {
+                transform: translateY(4em) rotateX(90deg);
+                background-color: #666697;
+                animation: pruebaBottom 6s ease infinite;
+            }
+            @keyframes pruebaFront {
+                0% {
+                    transform: translateZ(4em);
+                }
+                12.5% {
+                    transform: translateZ(6em);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                25% {
+                    width: 5em;
+                    height: 5em;
+                    background-color: #6B9BD2;
+                    transform: translateX(6em) rotateY(90deg);
+                }
+                37.5% {
+                    background-color: #585882;
+                    transform: translateX(4em) rotateY(90deg);
+                    width: 8em;
+                    height: 8em;
+                }
+                50% {
+                    background-color: #585882;
+                    transform: translateX(4em) rotateY(90deg);
+                    width: 8em;
+                    height: 8em;
+                }
+                62.5% {
+                    background-color: #6B9BD2;
+                    transform: translateX(6em) rotateY(90deg);
+                    width: 5em;
+                    height: 5em;
+                }
+                87.5% {
+                    background-color: #6B9BD2;
+                    transform: translateX(6em) rotateY(90deg);
+                    width: 5em;
+                    height: 5em;
+                }
+                100% {
+                    transform: translateX(4em) rotateY(90deg);
+                }
+
+            }
+            @keyframes pruebaBack {
+                0% {
+                    transform: translateZ(-4em);
+                }
+                12.5% {
+                    transform: translateZ(-6em);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                25% {
+                    width: 5em;
+                    height: 5em;
+                    background-color: #6B9BD2;
+                    transform: translateX(-6em) rotateY(90deg);
+                }
+                37.5% {
+                    background-color: #585882;
+                    transform: translateX(-4em) rotateY(90deg);
+                    width: 8em;
+                    height: 8em;
+                }
+                50% {
+                    background-color: #585882;
+                    transform: translateX(-4em) rotateY(90deg);
+                    width: 8em;
+                    height: 8em;
+                }
+                62.5% {
+                    background-color: #6B9BD2;
+                    transform: translateX(-6em) rotateY(90deg);
+                    width: 5em;
+                    height: 5em;
+                }
+                87.5% {
+                    background-color: #6B9BD2;
+                    transform: translateX(-6em) rotateY(90deg);
+                    width: 5em;
+                    height: 5em;
+                }
+                100% {
+                    transform: translateX(-4em) rotateY(90deg);
+                }
+
+            }
+            @keyframes pruebaLeft {
+                0% {
+                    transform: translateX(-4em) rotateY(90deg);
+                }
+                12.5% {
+                    transform: translateX(-6em) rotateY(90deg);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                25% {
+                    width: 5em;
+                    height: 5em;
+                    background-color: #6B9BD2;
+                    transform: translateZ(6em);
+                }
+                37.5% {
+                    background-color: #666697;
+                    transform: translateZ(4em);
+                    width: 8em;
+                    height: 8em;
+                }
+                50% {
+                    background-color: #666697;
+                    transform: translateZ(4em);
+                    width: 8em;
+                    height: 8em;
+                }
+                62.5% {
+                    transform: translateZ(6em);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                87.5% {
+                    transform: translateY(6em) rotateX(90deg);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                100% {
+                    transform: translateY(4em) rotateX(90deg);
+                }
+
+            }
+            @keyframes pruebaRight {
+                0% {
+                    transform: translateX(4em) rotateY(90deg);
+                }
+                12.5% {
+                    transform: translateX(6em) rotateY(90deg);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                25% {
+                    width: 5em;
+                    height: 5em;
+                    background-color: #6B9BD2;
+                    transform: translateZ(-6em);
+                }
+                37.5% {
+                    background-color: #666697;
+                    transform: translateZ(-4em);
+                    width: 8em;
+                    height: 8em;
+                }
+                50% {
+                    background-color: #666697;
+                    transform: translateZ(-4em);
+                    width: 8em;
+                    height: 8em;
+                }
+                62.5% {
+                    transform: translateZ(-6em);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                87.5% {
+                    transform: translateY(-6em) rotateX(90deg);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                100% {
+                    transform: translateY(-4em) rotateX(90deg);
+                }
+
+            }
+            @keyframes pruebaTop {
+                0% {
+                    transform: translateY(-4em) rotateX(90deg);
+                }
+                12.5% {
+                    transform: translateY(-6em) rotateX(90deg);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                25% {
+                    width: 5em;
+                    height: 5em;
+                    background-color: #6B9BD2;
+                    transform: translateY(-6em) rotateX(90deg);
+                }
+                37.5% {
+                    background-color: #666697;
+                    transform: translateY(-4em) rotateX(90deg);
+                    width: 8em;
+                    height: 8em;
+                }
+                50% {
+                    background-color: #666697;
+                    transform: translateY(-4em) rotateX(90deg);
+                    width: 8em;
+                    height: 8em;
+                }
+                62.5% {
+                    background-color: #6B9BD2;
+                    transform: translateY(-6em) rotateX(90deg);
+                    width: 5em;
+                    height: 5em;
+                }
+                87.5% {
+                    background-color: #6B9BD2;
+                    transform: translateZ(6em);
+                    width: 5em;
+                    height: 5em;
+                }
+                100% {
+                    transform: translateZ(4em);
+                }
+
+            }
+            @keyframes pruebaBottom {
+                0% {
+                    transform: translateY(4em) rotateX(90deg);
+                }
+                12.5% {
+                    transform: translateY(6em) rotateX(90deg);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                25% {
+                    width: 5em;
+                    height: 5em;
+                    background-color: #6B9BD2;
+                    transform: translateY(6em) rotateX(90deg);
+                }
+                37.5% {
+                    background-color: #666697;
+                    width: 8em;
+                    height: 8em;
+                    transform: translateY(4em) rotateX(90deg);
+                }
+                50% {
+                    background-color: #666697;
+                    width: 8em;
+                    height: 8em;
+                    transform: translateY(4em) rotateX(90deg);
+                }
+                62.5% {
+                    background-color: #6B9BD2;
+                    transform: translateY(6em) rotateX(90deg);
+                    width: 5em;
+                    height: 5em;
+                }
+                87.5% {
+                    transform: translateZ(-6em);
+                    background-color: #6B9BD2;
+                    width: 5em;
+                    height: 5em;
+                }
+                100% {
+                    transform: translateZ(-4em);
+                }
+
+            }
+
+
+            img {
+                max-width: 100%;
+                height: auto;
+                vertical-align: middle;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .navbarMovil {
+                display: none;
+            }
+            @media only screen and (max-width: 320px) {
+                .repotxt {
+                    font-size: 0.8em;
+                }
+                .csstxt {
+                    font-size: 0.8em;
+                }
+            }
+
+            @media only screen and (max-width: 426px) {
+                .navbar {
+                    display: none;
+                }
+                .navbarMovil {
+                    display: block;
+                    transform: scale(0.5);
+                }
+                .derecha {
+                    height: 40vh;
+                    width: 100%;
+                    justify-content: center;
+                    font-size: 30px;
+                }
+                .intro {
+                    flex-direction: column;
+                }
+                .izquierda {
+                    height: 40vh;
+                    width: 100%;     
+                    align-items: start;  
+                }
+                .fondo {
+                    width: 70%;
+                    height: 80%;
+                }
+                .aboutTitle {
+                    font-size: 2.2em;
+                }
+                .aboutContenido {
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 20px;
+    
+                }
+                .parrafo {
+                    width: 80%;
+                    font-size: 1.2em;
+                }
+                .caja3 {
+                    display: none;
+                }
+                footer {
+                    height: 8vh;
+                    width: 100%;
+                    font-size: 0.7em;
+                }
+            }
+</style>
+
+<script lang="js">
+	function secreto() {
+            window.alert("hola");
+        }
+</script>
