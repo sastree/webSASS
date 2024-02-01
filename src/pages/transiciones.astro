@@ -109,9 +109,14 @@ import Layout from "../layouts/Layout.astro";
         font-size: 40px;
     }
     section {
-        height: 82vh;
+        height: auto;
         display: flex;
         align-items: center;
         flex-direction: column;
+    }
+    @media only screen and (max-width: 426px) {
+        .titulo {
+            font-size: 1.6em;
+        }
     }
 </style>
