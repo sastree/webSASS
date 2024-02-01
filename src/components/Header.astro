@@ -17,7 +17,7 @@
             <div>
                 <img class="cerrar" src="cross.svg" alt="">
             </div>
-            <h1><div onclick="scrollToContent('aboutUsId')" class="about">About</div></h1>
+            <h1><div onclick="scrollToContentMenu('aboutUsId')" class="about">About</div></h1>
             <h1><a href="/animaciones">Animaciones</a></h1>
             <h1><a href="/transiciones">Transiciones</a></h1>
         </div>
@@ -187,6 +187,9 @@
     function scrollToContent(id) {
         window.location.href = '/#aboutUsId';
     }
+    function scrollToContentMenu(id) {
+        window.location.href = '/#aboutUsId';
+    }
     var menu = document.querySelector(".menuMovil");
     var menuOculto = document.querySelector(".menuOculto");
     var cerrar = document.querySelector(".cerrar");
@@ -194,12 +197,10 @@
 
     menu.addEventListener("click", function() {
         menuOculto.style.display = "block";
-        cubo.style.display = "none";
     });
 
     cerrar.addEventListener("click", function() {
         menuOculto.style.display = "none";
-        cubo.style.display = "flex";
     });
 
 
