@@ -12,18 +12,18 @@ import Layout from "../layouts/Layout.astro";
             <h1>Transiciones con botones <div class="linea"></div></h1>
         </div>
         <div class="botones">
-            <div class="cuadro c1"><button class="boton boton1">Ejemplo</button></div>
-            <div class="cuadro c2"><button class="boton boton2">Ejemplo</button></div>
-            <div class="cuadro c3"><button class="boton boton3">Ejemplo</button></div>
-            <div class="cuadro c4"><button class="boton boton4">Ejemplo</button></div>
-            <div class="cuadro c5"><button class="boton boton5">Ejemplo</button></div>
-            <div class="cuadro c6"><button class="boton boton6">Ejemplo</button></div>
-            <div class="cuadro c7"><button class="boton boton7">Ejemplo</button></div>
-            <div class="cuadro c8"><button class="boton boton8">Ejemplo</button></div>
-            <div class="cuadro c9"><button class="boton boton9">Ejemplo</button></div>
-            <div class="cuadro c10"><button class="boton boton10">Ejemplo</button></div>
-            <div class="cuadro c11"><button class="boton boton11">Ejemplo</button></div>
-            <div class="cuadro c12"><button class="boton boton12">Ejemplo</button></div>
+            <div class="cuadro c1"><button class="boton boton1">Button</button></div>
+            <div class="cuadro c2"><button class="boton boton2">Button</button></div>
+            <div class="cuadro c3"><div class="botontres"><button class="boton boton3">Button</button></div></div>
+            <div class="cuadro c4"><button class="boton boton4">Button</button></div>
+            <div class="cuadro c5"><button class="boton boton5">Button</button></div>
+            <div class="cuadro c6"><button class="boton boton6">Button</button></div>
+            <div class="cuadro c7"><button class="boton boton7">Button</button></div>
+            <div class="cuadro c8"><button class="boton boton8">Button</button></div>
+            <div class="cuadro c9"><button class="boton boton9">Button</button></div>
+            <div class="cuadro c10"><button class="boton boton10">Button</button></div>
+            <div class="cuadro c11"><button class="boton boton11">Button</button></div>
+            <div class="cuadro c12"><button class="boton boton12">Button</button></div>
         </div>
     </section>
     <Footer/>
@@ -35,6 +35,9 @@ import Layout from "../layouts/Layout.astro";
     }
     .boton2:hover {
         transform: scale(0.8);
+    }
+    .botontres {
+        background-color: black;
     }
     .boton3:hover {
         transform: translateY(-6px);
@@ -56,17 +59,23 @@ import Layout from "../layouts/Layout.astro";
         box-shadow: 0px 0px 10px black;
     }
     .boton9:hover {
-        
+        box-shadow: inset 0px 0px 5px black;
     }
     .boton10:hover {
-        
+        transform: rotate(10deg);
     }
     .boton11:hover {
-        
+        transform:translateX(8px) translateY(-8px);
+        box-shadow: -10px 10px 10px black;
     }
     .boton12:hover {
-        
+        transform:rotateX(360deg);
     }
+
+
+
+
+
     .c1 {
         animation: aparecer 0.5s 0s 1 ease-in forwards;
     }
@@ -106,14 +115,12 @@ import Layout from "../layouts/Layout.astro";
 
 
     .boton {
-        padding: 10px;
+        padding: 15px 20px;
         border: 0;
-        border-radius: 10px;
         font-size: 1.1em;
         font-weight:700;
         transition: all ease .55s;
         cursor: pointer;
-        transform: translateY(-10px);
     }
     .cuadro {
         width: 150px;
@@ -125,6 +132,7 @@ import Layout from "../layouts/Layout.astro";
         align-items: center;
         box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.588);
         opacity: 0;
+        transform: translateY(-10px);
     }
     .botones {
         height: 100%;
@@ -152,10 +160,6 @@ import Layout from "../layouts/Layout.astro";
         flex-direction: column;
     }
     @keyframes aparecer {
-        from {
-            transform: translateY(-10px);
-            opacity: 0;
-        }
         to {
             transform: translateY(0);
             opacity: 1;
