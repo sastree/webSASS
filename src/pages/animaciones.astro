@@ -8,13 +8,41 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
     <Header/>
     <section>
-        
+        <div class="titulo">
+            <h1>Animaciones<div class="linea"></div></h1>
+        </div>
+       
     </section>
     <Footer/>
 </Layout>
 
 <style lang="scss">
+    .linea {
+            height: 5px;
+            width: 100%;
+            background-color: #6B9BD2;
+        }
+    .titulo {
+        height: 15%;
+        width: 80%;
+        color: #575880;
+        font-size: 40px;
+    }
     section {
         height: 82vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    @keyframes aparecer {
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @media only screen and (max-width: 426px) {
+        .titulo {
+            font-size: 1.2em;
+        }
     }
 </style>
