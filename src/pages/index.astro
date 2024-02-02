@@ -114,7 +114,7 @@ import Layout from '../layouts/Layout.astro';
             transform-style: preserve-3d;
             transform: rotateX(-20deg);
             animation: anim 15s linear infinite;
-            z-index: -1;
+            z-index: 2;
             
         }
         .caja2 {
@@ -319,35 +319,32 @@ import Layout from '../layouts/Layout.astro';
             align-items: center;
             border-radius: 20px;
             box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.507);
-            z-index: -2;
+            z-index: 3;
 
         }
-                    /* Estilo del scrollbar */
-            /* Anchura del scrollbar */
-            ::-webkit-scrollbar {
-                width: 12px;
-            }
 
-            /* Track del scrollbar (la parte en la que no se desplaza el contenido) */
-            ::-webkit-scrollbar-track {
-                background: #FFFFFF;
-            }
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
 
-            /* Thumb del scrollbar (el control deslizante) */
-            ::-webkit-scrollbar-thumb {
-                background: #575880;
-            }
+        ::-webkit-scrollbar-track {
+            background: #FFFFFF;
+        }
 
-            /* Cambiar el color cuando se pasa el ratón sobre el thumb */
-            ::-webkit-scrollbar-thumb:hover {
-                background: #3e3f5c;
-            }
-            .aboutUs{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
+        ::-webkit-scrollbar-thumb {
+            background: #575880;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3e3f5c;
+        }
+
+        .aboutUs{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
             .aboutTitle {
                 color: #6B9BD2;
                 font-size: 3em;
