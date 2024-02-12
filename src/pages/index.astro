@@ -334,8 +334,8 @@ import Layout from '../layouts/Layout.astro';
             rotate: 6deg;
         }
         .fondo {
-            width: 50%;
-            height: 50%;
+            width: 25em;
+            height: 25em;
             background-color: #6B9BD2;
             display: flex;
             justify-content: center;
@@ -343,6 +343,7 @@ import Layout from '../layouts/Layout.astro';
             border-radius: 20px;
             box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.507);
             z-index: 3;
+            padding: 10px;
 
         }
 
@@ -363,6 +364,7 @@ import Layout from '../layouts/Layout.astro';
         }
 
         .aboutUs{
+            height: 90%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -801,6 +803,18 @@ import Layout from '../layouts/Layout.astro';
                     height: 8vh;
                     width: 100%;
                     font-size: 0.7em;
+                }
+            }
+
+            @media only screen and (min-width: 1920px) and (max-width: 4000px) {
+                .izquierda {
+                    font-size: 5em;
+                }
+                .aboutTitle {
+                    font-size: 6em;
+                }
+                .parrafo {
+                    font-size: 2.7em;
                 }
             }
 </style>
